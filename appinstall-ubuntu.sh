@@ -11,8 +11,7 @@ sudo add-apt-repository ppa:go-for-it-team/go-for-it-stable
 sudo apt update && \
 sudo apt-get install -y apt-transport-https && \
 sudo apt update && \
-
-sudo apt-get install code gnome-photos gnome-books unrar rclone  celluloid qbittorrent thunderbird krita inkscape darktable code go-for-it dotnet-sdk-5.0 aspnetcore-runtime-5.0 npm nasm clang python lua5.3 openjdk-8-jdk openjdk-8-jre git scribus qemu-kvm libvirt-daemon libvirt-daemon-system libvirt-daemon-driver-qemu gir1.2-spiceclientgtk-3.0 virt-manager ovmf hardinfo
+sudo apt-get install audacity code gnome-photos gnome-books unrar rclone celluloid qbittorrent thunderbird krita inkscape darktable code go-for-it dotnet-sdk-5.0 aspnetcore-runtime-5.0 npm nasm clang python lua5.3 openjdk-8-jdk openjdk-8-jre git scribus qemu-kvm libvirt-daemon libvirt-daemon-system libvirt-daemon-driver-qemu gir1.2-spiceclientgtk-3.0 virt-manager ovmf hardinfo && \
 
 ########################################################## SNAP
 sudo snap install discord && \
