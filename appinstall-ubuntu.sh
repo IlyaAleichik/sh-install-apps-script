@@ -12,30 +12,7 @@ sudo apt update && \
 sudo apt-get install -y apt-transport-https && \
 sudo apt update && \
 
-sudo apt-get install code
-sudo apt-get install gnome-photos
-sudo apt-get install gnome-books 
-sudo apt-get install unrar
-sudo apt-get install rclone 
-sudo apt-get install celluloid 
-sudo apt-get install qbittorrent 
-sudo apt-get install thunderbird
-sudo apt-get install krita 
-sudo apt-get install inkscape 
-sudo apt-get install darktable 
-sudo apt-get install code 
-sudo apt-get install go-for-it
-sudo apt-get install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0
-sudo apt-get install npm 
-sudo apt-get install nasm 
-sudo apt-get install clang 
-sudo apt-get install python
-sudo apt-get install lua5.3
-sudo apt-get install openjdk-8-jdk openjdk-8-jre
-sudo apt-get install git
-sudo apt-get install scribus
-sudo apt-get install qemu-kvm libvirt-daemon libvirt-daemon-system libvirt-daemon-driver-qemu gir1.2-spiceclientgtk-3.0 virt-manager ovmf
-sudo apt-get install hardinfo
+sudo apt-get install code gnome-photos gnome-books unrar rclone  celluloid qbittorrent thunderbird krita inkscape darktable code go-for-it dotnet-sdk-5.0 aspnetcore-runtime-5.0 npm nasm clang python lua5.3 openjdk-8-jdk openjdk-8-jre git scribus qemu-kvm libvirt-daemon libvirt-daemon-system libvirt-daemon-driver-qemu gir1.2-spiceclientgtk-3.0 virt-manager ovmf hardinfo
 
 ########################################################## SNAP
 sudo snap install discord && \
