@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #Aleichik Ilya Dzmitrievich, 2020
-
 #Autodesk Maya Installation Bash Script for Ubuntu Unity 20.04 based Linux Distributions
 
 #Make sure we’re running with root permissions.
