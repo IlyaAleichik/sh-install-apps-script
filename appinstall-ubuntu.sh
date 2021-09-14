@@ -11,6 +11,7 @@ rm packages-microsoft-prod.deb &&
 
 #sudo add-apt-repository ppa:go-for-it-team/go-for-it-stable 
 ########################################################## APT
+sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher
 
 sudo apt update && \
 sudo apt-get install -y apt-transport-https && \
