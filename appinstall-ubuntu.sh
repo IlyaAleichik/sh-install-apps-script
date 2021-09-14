@@ -15,7 +15,7 @@ rm packages-microsoft-prod.deb &&
 sudo apt update && \
 sudo apt-get install -y apt-transport-https && \
 sudo apt update && sudo apt install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0 && \
-sudo apt-get install audacity code gnome-photos gnome-books unrar rclone celluloid thunderbird inkscape darktable code npm nasm clang lua5.3 hardinfo && \ 
+sudo apt-get install audacity gnome-photos gnome-books rclone code && \ 
 
 ########################################################## SNAP
 
