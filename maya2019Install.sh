@@ -54,7 +54,7 @@ ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.0 /usr/autodesk/maya2019/lib/libss
 ln -s /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/autodesk/maya2019/lib/libcrypto.so.10
 ln -s /usr/lib/x86_64-linux-gnu/libtbb.so.2 /usr/lib/x86_64-linux-gnu/libtbb_preview.so.2
 ln -s /usr/lib/x86_64-linux-gnu/libpcre16.so.3 /usr/autodesk/maya2019/lib/libpcre16.so.0
-ln -s /usr/lib/x86_64-linux-gnu/libpng16.so.16 /usr/autodesk/maya2019/lib/libpng15.so.15
+## ln -s /usr/lib/x86_64-linux-gnu/libpng16.so.16 /usr/autodesk/maya2019/lib/libpng15.so.15
 
 mkdir -p /usr/tmp
 chmod 777 /usr/tmp
@@ -84,7 +84,7 @@ tar zxvf libpng-1.5.30.tar.gz
 make
 make install
 cp /usr/local/lib/libpng15.so.15 /usr/autodesk/maya2019/lib/libpng15.so.15
-make uninstall
+## make uninstall
 
 chmod -R 777 /opt/Autodesk 
 chmod -R 777 /opt/flexnetserver/
