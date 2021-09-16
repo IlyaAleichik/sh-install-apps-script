@@ -1,25 +1,36 @@
-#disabled - Krita
 
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg &&
-sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ &&
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list' &&
-rm -f packages.microsoft.gpg && \
+if [ `whoami` != root ]; then
+    echo Please run this script using sudo
+    echo Just type “sudo !!”
+    exit
+fi
 
-wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb &&
-sudo dpkg -i packages-microsoft-prod.deb &&
-rm packages-microsoft-prod.deb &&
+#Check for 64-bit arch
+if [uname -m != x86_64]; then
+    echo Maya will only run on 64-bit linux. 
+    echo Please install the 64-bit ubuntu and try again.
+    exit
+fi
 
-#sudo add-apt-repository ppa:go-for-it-team/go-for-it-stable 
-########################################################## APT
-sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher
+#Ulauncher
+echo Ulauncher Install ...\n
+sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher 
 
+#AppImageLauncher
+echo AppImageLauncher Install ...\n
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo apt-get update
+sudo apt-get install appimagelauncher
+
+#APT Apps
+echo APT Apps Install  ...\n
 sudo apt update && \
-sudo apt-get install -y apt-transport-https && \
-sudo apt update && sudo apt install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0 && \
-sudo apt-get install audacity gnome-photos gnome-books rclone code && \ 
+sudo apt-get install audacity gnome-photos gnome-books plank && \ 
+#SNAP-END 
 
-########################################################## SNAP
-
+#SNAP Apps
+echo SMAPS Apps Install  ...\n
+sudo snap refresh && \
 sudo snap install discord && \
 sudo snap install skype && \
 sudo snap install telegram-desktop && \
@@ -40,12 +51,25 @@ sudo snap install postman && \
 sudo snap install converternow && \
 sudo snap install handbrake-jz && \
 sudo snap install musescore && \
-sudo snap install qbittorrent-arnatious;
+sudo snap install qbittorrent-arnatious && \
+sudo snap install node --classic && \
+sudo snap install qalculate
+sudo snap install thunderbird
+#SNAP-END
 
 
-########################################################## DEB AND RPM
+##DEB AND RPM
+sudo apt update && sudo apt install lib32z1 && 
+sudo dpkg -i ./*.deb && 
 
-#AppImageLauncher - for integration apps
-sudo add-apt-repository ppa:appimagelauncher-team/stable
-sudo apt-get update
-sudo apt-get install appimagelauncher
+##Crossover Pathed
+sudo cp -f /crack/winewrapper.exe.so /opt/cxoffice/lib/wine/ &&
+
+##Bitwiw Pathed
+sudo cp -f ./patch/bitwig.jar /opt/bitwig-studio/bin/ &&
+
+##Fix package
+sudo apt --fix-broken install &&
+
+echo "Application sucessfull installed" || "Instalation filed"
+
