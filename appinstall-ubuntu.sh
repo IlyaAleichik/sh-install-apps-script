@@ -25,7 +25,7 @@ sudo apt-get install appimagelauncher
 #APT Apps
 echo APT Apps Install  ...\n
 sudo apt update && \
-sudo apt-get install audacity gnome-photos gnome-books plank && \ 
+sudo apt-get install audacity gnome-photos gnome-books plank gnome-disk-utility
 #SNAP-END 
 
 #SNAP Apps
@@ -53,7 +53,6 @@ sudo snap install handbrake-jz && \
 sudo snap install musescore && \
 sudo snap install qbittorrent-arnatious && \
 sudo snap install node --classic && \
-sudo snap install qalculate
 sudo snap install thunderbird
 #SNAP-END
 
