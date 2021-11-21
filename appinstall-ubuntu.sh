@@ -12,6 +12,10 @@ if [uname -m != x86_64]; then
     exit
 fi
 
+
+#fix sound
+sudo apt-get install --reinstall linux-generic
+
 #Ulauncher
 echo Ulauncher Install ...\n
 sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher 
