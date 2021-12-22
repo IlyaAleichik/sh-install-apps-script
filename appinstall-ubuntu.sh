@@ -20,13 +20,6 @@ sudo apt update && \
 sudo apt upgrade && \
 ##UPDATE END
 
-#LIBS
-echo Drivers and Packages Install ...\n
-sudo apt install --reinstall linux-generic && \
-sudo apt install lib32z1 && \
-echo Drivers and Packages Installed\n
-##LIBS END
-
 #APT
 echo APT Apps Install  ...\n
 sudo apt install ulauncher && \
@@ -58,5 +51,15 @@ sudo cp -f ./patch/bitwig.jar /opt/bitwig-studio/bin/ &&
 
 ##Fix package
 sudo apt --fix-broken install &&
+
+#LIBS
+echo Drivers and Packages Install ...\n
+sudo apt install --reinstall linux-generic && \
+sudo apt install lib32z1 && \
+sudo ubuntu-drivers autoinstall && \
+sudo reboot
+echo Drivers and Packages Installed\n
+##LIBS END
+
 echo "Application sucessfull installed" || "Instalation filed"
 
