@@ -16,21 +16,22 @@ sudo add-apt-repository ppa:appimagelauncher-team/stable
 #REPOSITORY DEFINE END
 
 ##UPDATE
-sudo apt update
-sudo apt upgrade 
+sudo apt update && \
+sudo apt upgrade && \
 ##UPDATE END
 
 #LIBS
 echo Drivers and Packages Install ...\n
-sudo apt install --reinstall linux-generic
-sudo apt install lib32z1 
+sudo apt install --reinstall linux-generic && \
+sudo apt install lib32z1 && \
 echo Drivers and Packages Installed\n
 ##LIBS END
 
 #APT
 echo APT Apps Install  ...\n
-sudo apt install ulauncher 
-sudo apt install appimagelauncher
+sudo apt install ulauncher && \
+sudo apt install unrar && \
+sudo apt install appimagelauncher && \
 #APT END 
 
 #SNAP
@@ -47,7 +48,7 @@ sudo snap install node --classic && \
 
 ##DEB
 echo AppImage Apps Install  ...\n
-sudo dpkg -i ./*.deb &&
+sudo dpkg -i ./*.deb && \
 ##DEB END
 
 ###PATH
