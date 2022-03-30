@@ -1,0 +1,3 @@
+git clone https://github.com/AvaloniaUI/avalonia-dotnet-templates.git
+cd avalonia-dotnet-templates/
+dotnet new --install ./
