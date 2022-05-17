@@ -56,6 +56,7 @@ sudo apt --fix-broken install &&
 echo Drivers and Packages Install ...\n
 sudo apt install --reinstall linux-generic && \
 sudo apt install lib32z1 && \
+sudo apt install xserver-xorg-input-synaptics
 sudo ubuntu-drivers autoinstall && \
 sudo reboot
 echo Drivers and Packages Installed\n
