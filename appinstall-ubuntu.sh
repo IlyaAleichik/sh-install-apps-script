@@ -20,36 +20,24 @@ sudo apt update && \
 sudo apt upgrade && \
 ##UPDATE END
 
+git clone git@github.com:vinceliuice/vimix-gtk-themes.git
+git clone git@github.com:vinceliuice/WhiteSur-icon-theme.git
+
 #APT
 echo APT Apps Install  ...\n
-sudo apt install ulauncher && \
+sudo apt install ulauncher, git && \
 sudo apt install unrar && \
 sudo apt install appimagelauncher && \
 #APT END 
 
-#SNAP
-echo SMAPS Apps Install  ...\n
-sudo snap refresh && \
-sudo snap install discord && \
-sudo snap install telegram-desktop && \
-sudo snap install opentoonz && \
-sudo snap install blender --classic && \
-sudo snap install android-studio --classic&& \
-sudo snap install qbittorrent-arnatious && \
-sudo snap install node --classic && \
-#SNAP END
-
-##DEB
-echo AppImage Apps Install  ...\n
-sudo dpkg -i ./*.deb && \
-##DEB END
-
 ###PATH
-sudo cp -f /crack/winewrapper.exe.so /opt/cxoffice/lib/wine/ &&
+sudo cp -f /patch/crack/winewrapper.exe.so /opt/cxoffice/lib/wine/ &&
 sudo cp -f ./patch/bitwig.jar /opt/bitwig-studio/bin/ &&
 ###PATH END
 
-##Fix package
+sudo dpkg -i ./*.deb && \
+
+##FIX
 sudo apt --fix-broken install &&
 
 #LIBS
