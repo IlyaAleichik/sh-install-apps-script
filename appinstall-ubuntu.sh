@@ -23,6 +23,8 @@ sudo add-apt-repository ppa:agornostal/ulauncher
 sudo add-apt-repository ppa:appimagelauncher-team/stable
 #REPOSITORY DEFINE END
 
+git config --global user.name
+git config --global user.email
 git clone git@github.com:vinceliuice/vimix-gtk-themes.git
 sudo ./vimix-gtk-themes/install.sh -c dark -t doder -s compact
 git clone git@github.com:vinceliuice/WhiteSur-icon-theme.git
