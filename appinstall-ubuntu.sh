@@ -10,6 +10,8 @@ if [uname -m != x86_64]; then
     exit
 fi
 
+sudo timedatectl set-local-rtc 1 --adjust-system-clock
+
 #REMOVE SNAP
 sudo systemctl stop snapd && sudo systemctl disable snapd
 sudo apt purge snapd
