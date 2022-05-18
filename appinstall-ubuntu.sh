@@ -10,24 +10,25 @@ if [uname -m != x86_64]; then
     exit
 fi
 
+#REMOVE SNAP
+sudo systemctl stop snapd && sudo systemctl disable snapd
+sudo apt purge snapd
+rm -rf ~/snapsudo rm -rf /snap /var/snap /var/lib/snapd /var/cache/snapd /usr/lib/snapd /root/snap
+
+
 #REPOSITORY DEFINE
 sudo add-apt-repository ppa:agornostal/ulauncher 
 sudo add-apt-repository ppa:appimagelauncher-team/stable
 #REPOSITORY DEFINE END
 
-##UPDATE
-sudo apt update && \
-sudo apt upgrade && \
-##UPDATE END
-
 git clone git@github.com:vinceliuice/vimix-gtk-themes.git
+sudo ./vimix-gtk-themes/install.sh -c dark -t doder -s compact
 git clone git@github.com:vinceliuice/WhiteSur-icon-theme.git
+sudo ./WhiteSur-icon-theme/install.sh
 
 #APT
 echo APT Apps Install  ...\n
-sudo apt install ulauncher, git && \
-sudo apt install unrar && \
-sudo apt install appimagelauncher && \
+sudo apt install ulauncher,git,unrar,appimagelauncher
 #APT END 
 
 ###PATH
