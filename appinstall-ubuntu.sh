@@ -8,7 +8,7 @@ rm -rf ~/snapsudo rm -rf /snap /var/snap /var/lib/snapd /var/cache/snapd /usr/li
 
 #APT
 echo APT Apps Install  ...\n
-sudo apt install ulauncher,git,unrar,appimagelauncher
+sudo apt install ulauncher git unrar appimagelauncher dconf-editor
 #APT END 
 
 
