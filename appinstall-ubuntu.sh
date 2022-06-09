@@ -1,5 +1,6 @@
-sudo timedatectl set-local-rtc 1 --adjust-system-clock
-
+#REPOSITORY DEFINE
+sudo add-apt-repository ppa:agornostal/ulauncher 
+sudo add-apt-repository ppa:appimagelauncher-team/stable
 
 #REMOVE SNAP
 sudo systemctl stop snapd && sudo systemctl disable snapd
@@ -8,15 +9,9 @@ rm -rf ~/snapsudo rm -rf /snap /var/snap /var/lib/snapd /var/cache/snapd /usr/li
 
 #APT
 echo APT Apps Install  ...\n
-sudo apt install ulauncher git unrar appimagelauncher dconf-editor
-#APT END 
+sudo apt install ulauncher git unrar appimagelauncher dconf-editor alacarte
 
-
-#REPOSITORY DEFINE
-sudo add-apt-repository ppa:agornostal/ulauncher 
-sudo add-apt-repository ppa:appimagelauncher-team/stable
-#REPOSITORY DEFINE END
-
+##GIT SETTINGS
 git config --global user.name IlyaAleichik  
 git config --global user.email ilya.alejchik@outlook.com
 git clone git@github.com:vinceliuice/vimix-gtk-themes.git
@@ -24,26 +19,34 @@ sudo ./vimix-gtk-themes/install.sh -c dark -t doder -s compact
 git clone git@github.com:vinceliuice/WhiteSur-icon-theme.git
 sudo ./WhiteSur-icon-theme/install.sh
 
+##DOTNET
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb 
+sudo apt-get install -y apt-transport-https
+sudo apt-get install -y dotnet-sdk-2.1 aspnetcore-runtime-2.1
+sudo apt-get install -y dotnet-sdk-3.1 aspnetcore-runtime-3.1
+sudo apt-get install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0
+sudo apt-get install -y dotnet-sdk-6.0 aspnetcore-runtime-6.0
+
+##MSSQL
+sudo apt-get install -y mssql-server && 
+sudo /opt/mssql/bin/mssql-conf setup && 
+systemctl status mssql-server --no-pager &&
 
 ###PATH
 sudo cp -f /patch/crack/winewrapper.exe.so /opt/cxoffice/lib/wine/ &&
 sudo cp -f ./patch/bitwig.jar /opt/bitwig-studio/bin/ &&
-###PATH END
-
-sudo dpkg -i ./*.deb && \
 
 ##FIX
-sudo apt --fix-broken install &&
+sudo timedatectl set-local-rtc 1 --adjust-system-clock ##fix localtime linux
+sudo apt --fix-broken install
 
-#LIBS
-echo Drivers and Packages Install ...\n
-sudo apt install --reinstall linux-generic && \
-sudo apt install lib32z1 && \
+#DRIVERS AND LIBS
+sudo apt install --reinstall linux-generic
+sudo apt install lib32z1
 sudo apt install xserver-xorg-input-synaptics
-sudo ubuntu-drivers autoinstall && \
-sudo reboot
-echo Drivers and Packages Installed\n
-##LIBS END
+sudo ubuntu-drivers autoinstall
 
 echo "Application sucessfull installed" || "Instalation filed"
 
