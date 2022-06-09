@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #Aleichik Ilya Dzmitrievich, 2021
+# Maya 2019
 #Autodesk Maya Installation Bash Script for Ubuntu Unity 20.04 based Linux Distributions
 
 DIR=./autodesk-maya/
