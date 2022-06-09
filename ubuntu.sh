@@ -29,6 +29,11 @@ sudo apt-get install -y dotnet-sdk-3.1 aspnetcore-runtime-3.1
 sudo apt-get install -y dotnet-sdk-5.0 aspnetcore-runtime-5.0
 sudo apt-get install -y dotnet-sdk-6.0 aspnetcore-runtime-6.0
 
+##DOTNET TEMPLATE INSTALL
+git clone https://github.com/AvaloniaUI/avalonia-dotnet-templates.git
+cd avalonia-dotnet-templates/
+dotnet new --install ./
+
 ##MSSQL
 sudo apt-get install -y mssql-server && 
 sudo /opt/mssql/bin/mssql-conf setup && 
