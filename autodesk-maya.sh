@@ -3,7 +3,7 @@
 #Aleichik Ilya Dzmitrievich, 2021
 #Autodesk Maya Installation Bash Script for Ubuntu Unity 20.04 based Linux Distributions
 
-DIR=./maya2019install/
+DIR=./autodesk-maya/
 
 if [ `whoami` != root ]; then
     echo Please run this script using sudo
