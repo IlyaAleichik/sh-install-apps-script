@@ -50,6 +50,7 @@ sudo apt --fix-broken install
 #DRIVERS AND LIBS
 sudo apt install --reinstall linux-generic
 sudo apt install lib32z1
+sudo apt install ubuntu-restricted-extras
 sudo apt install xserver-xorg-input-synaptics
 sudo ubuntu-drivers autoinstall
 
