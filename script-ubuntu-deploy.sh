@@ -39,6 +39,15 @@ sudo apt-get install -y mssql-server &&
 sudo /opt/mssql/bin/mssql-conf setup && 
 systemctl status mssql-server --no-pager &&
 
+##MYSQL
+sudo apt update 
+sudo apt-get install mysql-server
+mysql - -version 
+
+sudo mysql -u root -p 
+show databases; 
+use mysql 
+update user set plugin=‘password’ where user=‘root’;
 
 ##PSQL
 sudo apt install curl ca-certificates
