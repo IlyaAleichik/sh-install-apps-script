@@ -50,6 +50,7 @@ sudo apt -y install postgresql
 sudo -u postgresql psql
 alter user postgresql with password 'password';
 create user ilya with password 'password';
+grant all privileges on database mydb to ilya;
 
 ###PATH
 sudo cp -f /patch/crack/winewrapper.exe.so /opt/cxoffice/lib/wine/ &&
