@@ -48,6 +48,7 @@ sudo mysql -u root -p
 show databases; 
 use mysql 
 update user set plugin=‘password’ where user=‘root’;
+flush privileges; 
 
 ##PSQL
 sudo apt install curl ca-certificates
