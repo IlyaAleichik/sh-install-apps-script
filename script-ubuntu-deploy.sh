@@ -10,6 +10,10 @@ rm -rf ~/snapsudo rm -rf /snap /var/snap /var/lib/snapd /var/cache/snapd /usr/li
 #APT
 echo APT Apps Install  ...\n
 sudo apt install ulauncher git unrar appimagelauncher dconf-editor alacarte
+sudo apt-get install curl
+curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+sudo apt-get install speedtest
+
 
 ##GIT SETTINGS
 git config --global user.name IlyaAleichik  
