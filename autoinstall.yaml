@@ -1,0 +1,20 @@
+#cloud-config
+autoinstall:
+  # version is an Autoinstall required field.
+  version: 1
+  
+  packages:
+    - ubuntu-desktop
+    
+  identity:
+    realname: 'ilya'
+    username: ilya
+    # A password hash is needed. `mkpasswd --method=SHA-512` can help.
+    # mkpasswd can be found in the package 'whois'
+    password: '<06c43b34730c29bf3f07de4120dbbc3a764175dd10648789736c67d9dcbc6f5486fed342e20eb070cff0bdc7ecee56b595f699a39876e4aa199431f57ec87a21>'
+    hostname: ilya-z510-laptop
+    
+  late-commands:
+   - >-
+    curtin in-traget -- sudo apt-get install git unrar dconf-editor qbittorrent gnome-browser-connector
+
