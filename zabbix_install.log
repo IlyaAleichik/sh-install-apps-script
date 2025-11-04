@@ -1,0 +1,584 @@
+root@vm2:/home/ilya/Downloads# ./zabbix_install_script.sh
+Введите пароль для пользователя Zabbix:
+
+Обновление пакетов...
+# Hit:1 http://by.archive.ubuntu.com/ubuntu jammy InRelease
+# Hit:2 http://by.archive.ubuntu.com/ubuntu jammy-updates InRelease
+# Hit:3 http://by.archive.ubuntu.com/ubuntu jammy-backports InRelease
+# Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+# Reading package lists... Done
+# Building dependency tree... Done
+# Reading state information... Done
+# 285 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+Установка Apache2...
+# Reading package lists... Done
+# Building dependency tree... Done
+# Reading state information... Done
+# The following additional packages will be installed:
+#   apache2-bin apache2-data apache2-utils libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap
+# Suggested packages:
+#   apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+# The following NEW packages will be installed:
+#   apache2 apache2-bin apache2-data apache2-utils libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap
+# 0 upgraded, 8 newly installed, 0 to remove and 285 not upgraded.
+# Need to get 1.923 kB of archives.
+# After this operation, 7.728 kB of additional disk space will be used.
+# Get:1 http://by.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libapr1 amd64 1.7.0-8ubuntu0.22.04.2 [108 kB]
+# Get:2 http://by.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1 amd64 1.6.1-5ubuntu4.22.04.2 [92,8 kB]
+# Get:3 http://by.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-5ubuntu4.22.04.2 [11,3 kB]
+# Get:4 http://by.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-ldap amd64 1.6.1-5ubuntu4.22.04.2 [9.170 B]
+# Get:5 http://security.ubuntu.com/ubuntu jammy-security/main amd64 apache2-bin amd64 2.4.52-1ubuntu4.16 [1.349 kB]
+# Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 apache2-data all 2.4.52-1ubuntu4.16 [165 kB]
+# Get:7 http://security.ubuntu.com/ubuntu jammy-security/main amd64 apache2-utils amd64 2.4.52-1ubuntu4.16 [89,3 kB]
+# Get:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 apache2 amd64 2.4.52-1ubuntu4.16 [97,9 kB]
+# Fetched 1.923 kB in 3s (596 kB/s)
+# Selecting previously unselected package libapr1:amd64.
+# (Reading database ... 231155 files and directories currently installed.)
+# Preparing to unpack .../0-libapr1_1.7.0-8ubuntu0.22.04.2_amd64.deb ...
+# Unpacking libapr1:amd64 (1.7.0-8ubuntu0.22.04.2) ...
+# Selecting previously unselected package libaprutil1:amd64.
+# Preparing to unpack .../1-libaprutil1_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+# Unpacking libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+# Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+# Preparing to unpack .../2-libaprutil1-dbd-sqlite3_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+# Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+# Selecting previously unselected package libaprutil1-ldap:amd64.
+# Preparing to unpack .../3-libaprutil1-ldap_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+# Unpacking libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+# Selecting previously unselected package apache2-bin.
+# Preparing to unpack .../4-apache2-bin_2.4.52-1ubuntu4.16_amd64.deb ...
+# Unpacking apache2-bin (2.4.52-1ubuntu4.16) ...
+# Selecting previously unselected package apache2-data.
+# Preparing to unpack .../5-apache2-data_2.4.52-1ubuntu4.16_all.deb ...
+# Unpacking apache2-data (2.4.52-1ubuntu4.16) ...
+# Selecting previously unselected package apache2-utils.
+# Preparing to unpack .../6-apache2-utils_2.4.52-1ubuntu4.16_amd64.deb ...
+# Unpacking apache2-utils (2.4.52-1ubuntu4.16) ...
+# Selecting previously unselected package apache2.
+# Preparing to unpack .../7-apache2_2.4.52-1ubuntu4.16_amd64.deb ...
+# Unpacking apache2 (2.4.52-1ubuntu4.16) ...
+# Setting up libapr1:amd64 (1.7.0-8ubuntu0.22.04.2) ...
+# Setting up apache2-data (2.4.52-1ubuntu4.16) ...
+# Setting up libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+# Setting up libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+# Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+# Setting up apache2-utils (2.4.52-1ubuntu4.16) ...
+# Setting up apache2-bin (2.4.52-1ubuntu4.16) ...
+# Setting up apache2 (2.4.52-1ubuntu4.16) ...
+# Enabling module mpm_event.
+# Enabling module authz_core.
+# Enabling module authz_host.
+# Enabling module authn_core.
+# Enabling module auth_basic.
+# Enabling module access_compat.
+# Enabling module authn_file.
+# Enabling module authz_user.
+# Enabling module alias.
+# Enabling module dir.
+# Enabling module autoindex.
+# Enabling module env.
+# Enabling module mime.
+# Enabling module negotiation.
+# Enabling module setenvif.
+# Enabling module filter.
+# Enabling module deflate.
+# Enabling module status.
+# Enabling module reqtimeout.
+# Enabling conf charset.
+# Enabling conf localized-error-pages.
+# Enabling conf other-vhosts-access-log.
+# Enabling conf security.
+# Enabling conf serve-cgi-bin.
+# Enabling site 000-default.
+# Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+# Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+# Processing triggers for ufw (0.36.1-4ubuntu0.1) ...
+# Processing triggers for man-db (2.10.2-1) ...
+# Processing triggers for libc-bin (2.35-0ubuntu3.8) ...
+Установка MySQL...
+# Reading package lists... Done
+# Building dependency tree... Done
+# Reading state information... Done
+# The following additional packages will be installed:
+#   libaio1 libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7 libevent-pthreads-2.1-7 libfcgi-bin libfcgi-perl libfcgi0ldbl libhtml-template-perl libmecab2 libprotobuf-lite23 mecab-ipadic
+#   mecab-ipadic-utf8 mecab-utils mysql-client-8.0 mysql-client-core-8.0 mysql-common mysql-server-8.0 mysql-server-core-8.0
+# Suggested packages:
+#   libipc-sharedcache-perl mailx tinyca
+# The following NEW packages will be installed:
+#   libaio1 libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7 libevent-pthreads-2.1-7 libfcgi-bin libfcgi-perl libfcgi0ldbl libhtml-template-perl libmecab2 libprotobuf-lite23 mecab-ipadic
+#   mecab-ipadic-utf8 mecab-utils mysql-client mysql-client-8.0 mysql-client-core-8.0 mysql-common mysql-server mysql-server-8.0 mysql-server-core-8.0
+# 0 upgraded, 21 newly installed, 0 to remove and 285 not upgraded.
+# Need to get 29,5 MB of archives.
+# After this operation, 243 MB of additional disk space will be used.
+# Get:1 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 mysql-common all 5.8+1.0.8 [7.212 B]
+# Get:2 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 libaio1 amd64 0.3.112-13build1 [7.176 B]
+# Get:3 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 libevent-core-2.1-7 amd64 2.1.12-stable-1build3 [93,9 kB]
+# Get:4 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 libevent-pthreads-2.1-7 amd64 2.1.12-stable-1build3 [7.642 B]
+# Get:5 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 libmecab2 amd64 0.996-14build9 [199 kB]
+# Get:6 http://by.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libprotobuf-lite23 amd64 3.12.4-1ubuntu7.22.04.4 [209 kB]
+# Get:7 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 libcgi-pm-perl all 4.54-1 [188 kB]
+# Get:8 http://by.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libfcgi0ldbl amd64 2.4.2-2ubuntu0.1 [28,1 kB]
+# Get:9 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 libfcgi-perl amd64 0.82+ds-1build1 [22,8 kB]
+# Get:10 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 libcgi-fast-perl all 1:2.15-1 [10,5 kB]
+# Get:11 http://by.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libfcgi-bin amd64 2.4.2-2ubuntu0.1 [11,1 kB]
+# Get:12 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 libhtml-template-perl all 2.97-1.1 [59,1 kB]
+# Get:13 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-utils amd64 0.996-14build9 [4.850 B]
+# Get:14 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6.718 kB]
+# Get:15 http://security.ubuntu.com/ubuntu jammy-security/main amd64 mysql-client-core-8.0 amd64 8.0.43-0ubuntu0.22.04.1 [2.706 kB]
+# Get:16 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4.384 B]
+# Get:17 http://security.ubuntu.com/ubuntu jammy-security/main amd64 mysql-client-8.0 amd64 8.0.43-0ubuntu0.22.04.1 [22,7 kB]
+# Get:18 http://security.ubuntu.com/ubuntu jammy-security/main amd64 mysql-server-core-8.0 amd64 8.0.43-0ubuntu0.22.04.1 [17,8 MB]
+# Get:19 http://security.ubuntu.com/ubuntu jammy-security/main amd64 mysql-server-8.0 amd64 8.0.43-0ubuntu0.22.04.1 [1.446 kB]
+# Get:20 http://security.ubuntu.com/ubuntu jammy-security/main amd64 mysql-client all 8.0.43-0ubuntu0.22.04.1 [9.350 B]
+# Get:21 http://security.ubuntu.com/ubuntu jammy-security/main amd64 mysql-server all 8.0.43-0ubuntu0.22.04.1 [9.454 B]
+# Fetched 29,5 MB in 1s (24,0 MB/s)
+# Preconfiguring packages ...
+# Selecting previously unselected package mysql-common.
+# (Reading database ... 231856 files and directories currently installed.)
+# Preparing to unpack .../0-mysql-common_5.8+1.0.8_all.deb ...
+# Unpacking mysql-common (5.8+1.0.8) ...
+# Selecting previously unselected package mysql-client-core-8.0.
+# Preparing to unpack .../1-mysql-client-core-8.0_8.0.43-0ubuntu0.22.04.1_amd64.deb ...
+# Unpacking mysql-client-core-8.0 (8.0.43-0ubuntu0.22.04.1) ...
+# Selecting previously unselected package mysql-client-8.0.
+# Preparing to unpack .../2-mysql-client-8.0_8.0.43-0ubuntu0.22.04.1_amd64.deb ...
+# Unpacking mysql-client-8.0 (8.0.43-0ubuntu0.22.04.1) ...
+# Selecting previously unselected package libaio1:amd64.
+# Preparing to unpack .../3-libaio1_0.3.112-13build1_amd64.deb ...
+# Unpacking libaio1:amd64 (0.3.112-13build1) ...
+# Selecting previously unselected package libevent-core-2.1-7:amd64.
+# Preparing to unpack .../4-libevent-core-2.1-7_2.1.12-stable-1build3_amd64.deb ...
+# Unpacking libevent-core-2.1-7:amd64 (2.1.12-stable-1build3) ...
+# Selecting previously unselected package libevent-pthreads-2.1-7:amd64.
+# Preparing to unpack .../5-libevent-pthreads-2.1-7_2.1.12-stable-1build3_amd64.deb ...
+# Unpacking libevent-pthreads-2.1-7:amd64 (2.1.12-stable-1build3) ...
+# Selecting previously unselected package libmecab2:amd64.
+# Preparing to unpack .../6-libmecab2_0.996-14build9_amd64.deb ...
+# Unpacking libmecab2:amd64 (0.996-14build9) ...
+# Selecting previously unselected package libprotobuf-lite23:amd64.
+# Preparing to unpack .../7-libprotobuf-lite23_3.12.4-1ubuntu7.22.04.4_amd64.deb ...
+# Unpacking libprotobuf-lite23:amd64 (3.12.4-1ubuntu7.22.04.4) ...
+# Selecting previously unselected package mysql-server-core-8.0.
+# Preparing to unpack .../8-mysql-server-core-8.0_8.0.43-0ubuntu0.22.04.1_amd64.deb ...
+# Unpacking mysql-server-core-8.0 (8.0.43-0ubuntu0.22.04.1) ...
+# Setting up mysql-common (5.8+1.0.8) ...
+# update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+# Selecting previously unselected package mysql-server-8.0.
+# (Reading database ... 232080 files and directories currently installed.)
+# Preparing to unpack .../00-mysql-server-8.0_8.0.43-0ubuntu0.22.04.1_amd64.deb ...
+# Unpacking mysql-server-8.0 (8.0.43-0ubuntu0.22.04.1) ...
+# Selecting previously unselected package libcgi-pm-perl.
+# Preparing to unpack .../01-libcgi-pm-perl_4.54-1_all.deb ...
+# Unpacking libcgi-pm-perl (4.54-1) ...
+# Selecting previously unselected package libfcgi0ldbl:amd64.
+# Preparing to unpack .../02-libfcgi0ldbl_2.4.2-2ubuntu0.1_amd64.deb ...
+# Unpacking libfcgi0ldbl:amd64 (2.4.2-2ubuntu0.1) ...
+# Selecting previously unselected package libfcgi-perl:amd64.
+# Preparing to unpack .../03-libfcgi-perl_0.82+ds-1build1_amd64.deb ...
+# Unpacking libfcgi-perl:amd64 (0.82+ds-1build1) ...
+# Selecting previously unselected package libcgi-fast-perl.
+# Preparing to unpack .../04-libcgi-fast-perl_1%3a2.15-1_all.deb ...
+# Unpacking libcgi-fast-perl (1:2.15-1) ...
+# Selecting previously unselected package libfcgi-bin.
+# Preparing to unpack .../05-libfcgi-bin_2.4.2-2ubuntu0.1_amd64.deb ...
+# Unpacking libfcgi-bin (2.4.2-2ubuntu0.1) ...
+# Selecting previously unselected package libhtml-template-perl.
+# Preparing to unpack .../06-libhtml-template-perl_2.97-1.1_all.deb ...
+# Unpacking libhtml-template-perl (2.97-1.1) ...
+# Selecting previously unselected package mecab-utils.
+# Preparing to unpack .../07-mecab-utils_0.996-14build9_amd64.deb ...
+# Unpacking mecab-utils (0.996-14build9) ...
+# Selecting previously unselected package mecab-ipadic.
+# Preparing to unpack .../08-mecab-ipadic_2.7.0-20070801+main-3_all.deb ...
+# Unpacking mecab-ipadic (2.7.0-20070801+main-3) ...
+# Selecting previously unselected package mecab-ipadic-utf8.
+# Preparing to unpack .../09-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb ...
+# Unpacking mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+# Selecting previously unselected package mysql-client.
+# Preparing to unpack .../10-mysql-client_8.0.43-0ubuntu0.22.04.1_all.deb ...
+# Unpacking mysql-client (8.0.43-0ubuntu0.22.04.1) ...
+# Selecting previously unselected package mysql-server.
+# Preparing to unpack .../11-mysql-server_8.0.43-0ubuntu0.22.04.1_all.deb ...
+# Unpacking mysql-server (8.0.43-0ubuntu0.22.04.1) ...
+# Setting up libmecab2:amd64 (0.996-14build9) ...
+# Setting up mysql-client-core-8.0 (8.0.43-0ubuntu0.22.04.1) ...
+# Setting up libfcgi0ldbl:amd64 (2.4.2-2ubuntu0.1) ...
+# Setting up libcgi-pm-perl (4.54-1) ...
+# Setting up libfcgi-bin (2.4.2-2ubuntu0.1) ...
+# Setting up libhtml-template-perl (2.97-1.1) ...
+# Setting up libprotobuf-lite23:amd64 (3.12.4-1ubuntu7.22.04.4) ...
+# Setting up mecab-utils (0.996-14build9) ...
+# Setting up libevent-core-2.1-7:amd64 (2.1.12-stable-1build3) ...
+# Setting up mysql-client-8.0 (8.0.43-0ubuntu0.22.04.1) ...
+# Setting up libfcgi-perl:amd64 (0.82+ds-1build1) ...
+# Setting up libaio1:amd64 (0.3.112-13build1) ...
+# Setting up libevent-pthreads-2.1-7:amd64 (2.1.12-stable-1build3) ...
+# Setting up mysql-client (8.0.43-0ubuntu0.22.04.1) ...
+# Setting up mecab-ipadic (2.7.0-20070801+main-3) ...
+# Compiling IPA dictionary for Mecab.  This takes long time...
+# reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+# emitting double-array: 100% |###########################################|
+# /usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+# reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+# reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+# reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+# reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+# reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+# reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+# reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+# reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+# reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+# reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+# reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+# reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+# reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+# reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+# reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+# reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+# reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+# reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+# reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+# reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+# reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+# reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+# reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+# reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+# reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+# reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+# emitting double-array: 100% |###########################################|
+# reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+# emitting matrix      : 100% |###########################################|
+
+# done!
+# update-alternatives: using /var/lib/mecab/dic/ipadic to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+# Setting up libcgi-fast-perl (1:2.15-1) ...
+# Setting up mysql-server-core-8.0 (8.0.43-0ubuntu0.22.04.1) ...
+# Setting up mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+# Compiling IPA dictionary for Mecab.  This takes long time...
+# reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+# emitting double-array: 100% |###########################################|
+# /usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+# reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+# reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+# reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+# reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+# reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+# reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+# reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+# reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+# reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+# reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+# reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+# reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+# reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+# reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+# reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+# reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+# reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+# reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+# reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+# reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+# reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+# reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+# reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+# reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+# reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+# reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+# emitting double-array: 100% |###########################################|
+# reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+# emitting matrix      : 100% |###########################################|
+
+# done!
+# update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+# Setting up mysql-server-8.0 (8.0.43-0ubuntu0.22.04.1) ...
+# update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+# Renaming removed key_buffer and myisam-recover options (if present)
+# mysqld will log errors to /var/log/mysql/error.log
+# mysqld is running as pid 18767
+# Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/system/mysql.service.
+# Setting up mysql-server (8.0.43-0ubuntu0.22.04.1) ...
+# Processing triggers for man-db (2.10.2-1) ...
+# Processing triggers for libc-bin (2.35-0ubuntu3.8) ...
+
+Проверка статуса MySQL...
+# ● mysql.service - MySQL Community Server
+#      Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+#      Active: active (running) since Tue 2025-11-04 17:01:37 +03; 6s ago
+#     Process: 18946 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+#    Main PID: 18954 (mysqld)
+#      Status: "Server is operational"
+#       Tasks: 38 (limit: 2264)
+#      Memory: 364.6M
+#         CPU: 1.091s
+#      CGroup: /system.slice/mysql.service
+#              └─18954 /usr/sbin/mysqld
+# ліс 04 17:01:36 vm2 systemd[1]: Starting MySQL Community Server...
+# ліс 04 17:01:37 vm2 systemd[1]: Started MySQL Community Server.
+
+Версия MySQL:
+# mysql  Ver 8.0.43-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
+
+Настройка безопасности MySQL...
+# Securing the MySQL server deployment.
+# Connecting to MySQL using a blank password.
+# VALIDATE PASSWORD COMPONENT can be used to test passwords
+# and improve security. It checks the strength of password
+# and allows the users to set only those passwords which are
+# secure enough. Would you like to setup VALIDATE PASSWORD component?
+
+# Press y|Y for Yes, any other key for No: no
+
+# Skipping password set for root as authentication with auth_socket is used by default.
+# If you would like to use password authentication instead, this can be done with the "ALTER_USER" command.
+# See https://dev.mysql.com/doc/refman/8.0/en/alter-user.html#alter-user-password-management for more information.
+
+# By default, a MySQL installation has an anonymous user,
+# allowing anyone to log into MySQL without having to have
+# a user account created for them. This is intended only for
+# testing, and to make the installation go a bit smoother.
+# You should remove them before moving into a production
+# environment.
+
+# Remove anonymous users? (Press y|Y for Yes, any other key for No) :
+
+#  ... skipping.
+
+
+# Normally, root should only be allowed to connect from
+# 'localhost'. This ensures that someone cannot guess at
+# the root password from the network.
+
+# Disallow root login remotely? (Press y|Y for Yes, any other key for No) :
+
+#  ... skipping.
+# By default, MySQL comes with a database named 'test' that
+# anyone can access. This is also intended only for testing,
+# and should be removed before moving into a production
+# environment.
+
+
+# Remove test database and access to it? (Press y|Y for Yes, any other key for No) :
+
+#  ... skipping.
+# Reloading the privilege tables will ensure that all changes
+# made so far will take effect immediately.
+
+# Reload privilege tables now? (Press y|Y for Yes, any other key for No) :
+
+#  ... skipping.
+# All done!
+
+Установка PHP...
+# Reading package lists... Done
+# Building dependency tree... Done
+# Reading state information... Done
+# The following additional packages will be installed:
+#   libapache2-mod-php8.1 php8.1 php8.1-cli php8.1-common php8.1-mysql php8.1-opcache php8.1-readline
+# Suggested packages:
+#   php-pear
+# The following NEW packages will be installed:
+#   libapache2-mod-php8.1 php php-cli php-common php-mysql php8.1 php8.1-cli php8.1-common php8.1-mysql php8.1-opcache php8.1-readline
+# 0 upgraded, 11 newly installed, 0 to remove and 285 not upgraded.
+# Need to get 5.269 kB of archives.
+# After this operation, 21,8 MB of additional disk space will be used.
+# Get:1 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 php-common all 2:92ubuntu1 [12,4 kB]
+# Get:2 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 php all 2:8.1+92ubuntu1 [2.756 B]
+# Get:3 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 php-cli all 2:8.1+92ubuntu1 [3.234 B]
+# Get:4 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 php-mysql all 2:8.1+92ubuntu1 [1.834 B]
+# Get:5 http://security.ubuntu.com/ubuntu jammy-security/main amd64 php8.1-common amd64 8.1.2-1ubuntu2.22 [1.129 kB]
+# Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 php8.1-opcache amd64 8.1.2-1ubuntu2.22 [365 kB]
+# Get:7 http://security.ubuntu.com/ubuntu jammy-security/main amd64 php8.1-readline amd64 8.1.2-1ubuntu2.22 [13,6 kB]
+# Get:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 php8.1-cli amd64 8.1.2-1ubuntu2.22 [1.835 kB]
+# Get:9 http://security.ubuntu.com/ubuntu jammy-security/main amd64 libapache2-mod-php8.1 amd64 8.1.2-1ubuntu2.22 [1.765 kB]
+# Get:10 http://security.ubuntu.com/ubuntu jammy-security/main amd64 php8.1 all 8.1.2-1ubuntu2.22 [9.162 B]
+# Get:11 http://security.ubuntu.com/ubuntu jammy-security/main amd64 php8.1-mysql amd64 8.1.2-1ubuntu2.22 [131 kB]
+# Fetched 5.269 kB in 2s (2.293 kB/s)
+# Selecting previously unselected package php-common.
+# (Reading database ... 232249 files and directories currently installed.)
+# Preparing to unpack .../00-php-common_2%3a92ubuntu1_all.deb ...
+# Unpacking php-common (2:92ubuntu1) ...
+# Selecting previously unselected package php8.1-common.
+# Preparing to unpack .../01-php8.1-common_8.1.2-1ubuntu2.22_amd64.deb ...
+# Unpacking php8.1-common (8.1.2-1ubuntu2.22) ...
+# Selecting previously unselected package php8.1-opcache.
+# Preparing to unpack .../02-php8.1-opcache_8.1.2-1ubuntu2.22_amd64.deb ...
+# Unpacking php8.1-opcache (8.1.2-1ubuntu2.22) ...
+# Selecting previously unselected package php8.1-readline.
+# Preparing to unpack .../03-php8.1-readline_8.1.2-1ubuntu2.22_amd64.deb ...
+# Unpacking php8.1-readline (8.1.2-1ubuntu2.22) ...
+# Selecting previously unselected package php8.1-cli.
+# Preparing to unpack .../04-php8.1-cli_8.1.2-1ubuntu2.22_amd64.deb ...
+# Unpacking php8.1-cli (8.1.2-1ubuntu2.22) ...
+# Selecting previously unselected package libapache2-mod-php8.1.
+# Preparing to unpack .../05-libapache2-mod-php8.1_8.1.2-1ubuntu2.22_amd64.deb ...
+# Unpacking libapache2-mod-php8.1 (8.1.2-1ubuntu2.22) ...
+# Selecting previously unselected package php8.1.
+# Preparing to unpack .../06-php8.1_8.1.2-1ubuntu2.22_all.deb ...
+# Unpacking php8.1 (8.1.2-1ubuntu2.22) ...
+# Selecting previously unselected package php.
+# Preparing to unpack .../07-php_2%3a8.1+92ubuntu1_all.deb ...
+# Unpacking php (2:8.1+92ubuntu1) ...
+# Selecting previously unselected package php-cli.
+# Preparing to unpack .../08-php-cli_2%3a8.1+92ubuntu1_all.deb ...
+# Unpacking php-cli (2:8.1+92ubuntu1) ...
+# Selecting previously unselected package php8.1-mysql.
+# Preparing to unpack .../09-php8.1-mysql_8.1.2-1ubuntu2.22_amd64.deb ...
+# Unpacking php8.1-mysql (8.1.2-1ubuntu2.22) ...
+# Selecting previously unselected package php-mysql.
+# Preparing to unpack .../10-php-mysql_2%3a8.1+92ubuntu1_all.deb ...
+# Unpacking php-mysql (2:8.1+92ubuntu1) ...
+# Setting up php-common (2:92ubuntu1) ...
+# Created symlink /etc/systemd/system/timers.target.wants/phpsessionclean.timer → /lib/systemd/system/phpsessionclean.timer.
+# Setting up php8.1-common (8.1.2-1ubuntu2.22) ...
+
+# Creating config file /etc/php/8.1/mods-available/calendar.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/ctype.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/exif.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/fileinfo.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/ffi.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/ftp.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/gettext.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/iconv.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/pdo.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/phar.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/posix.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/shmop.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/sockets.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/sysvmsg.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/sysvsem.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/sysvshm.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/tokenizer.ini with new version
+# Setting up php8.1-mysql (8.1.2-1ubuntu2.22) ...
+
+# Creating config file /etc/php/8.1/mods-available/mysqlnd.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/mysqli.ini with new version
+
+# Creating config file /etc/php/8.1/mods-available/pdo_mysql.ini with new version
+# Setting up php8.1-readline (8.1.2-1ubuntu2.22) ...
+
+# Creating config file /etc/php/8.1/mods-available/readline.ini with new version
+# Setting up php8.1-opcache (8.1.2-1ubuntu2.22) ...
+
+# Creating config file /etc/php/8.1/mods-available/opcache.ini with new version
+# Setting up php-mysql (2:8.1+92ubuntu1) ...
+# Setting up php8.1-cli (8.1.2-1ubuntu2.22) ...
+# update-alternatives: using /usr/bin/php8.1 to provide /usr/bin/php (php) in auto mode
+# update-alternatives: using /usr/bin/phar8.1 to provide /usr/bin/phar (phar) in auto mode
+# update-alternatives: using /usr/bin/phar.phar8.1 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+
+# Creating config file /etc/php/8.1/cli/php.ini with new version
+# Setting up php-cli (2:8.1+92ubuntu1) ...
+# update-alternatives: using /usr/bin/php.default to provide /usr/bin/php (php) in auto mode
+# update-alternatives: using /usr/bin/phar.default to provide /usr/bin/phar (phar) in auto mode
+# update-alternatives: using /usr/bin/phar.phar.default to provide /usr/bin/phar.phar (phar.phar) in auto mode
+# Setting up libapache2-mod-php8.1 (8.1.2-1ubuntu2.22) ...
+
+# Creating config file /etc/php/8.1/apache2/php.ini with new version
+# Module mpm_event disabled.
+# Enabling module mpm_prefork.
+# apache2_switch_mpm Switch to prefork
+# apache2_invoke: Enable module php8.1
+# Setting up php8.1 (8.1.2-1ubuntu2.22) ...
+# Setting up php (2:8.1+92ubuntu1) ...
+# Processing triggers for man-db (2.10.2-1) ...
+# Processing triggers for php8.1-cli (8.1.2-1ubuntu2.22) ...
+# Processing triggers for libapache2-mod-php8.1 (8.1.2-1ubuntu2.22) ...
+
+
+
+Установка репозитория Zabbix...
+# --2025-11-04 17:04:36--  https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu20.04_all.deb
+# Resolving repo.zabbix.com (repo.zabbix.com)... 178.128.6.101, 2604:a880:2:d0::2062:d001
+# Connecting to repo.zabbix.com (repo.zabbix.com)|178.128.6.101|:443... connected.
+# HTTP request sent, awaiting response... 200 OK
+# Length: 3672 (3,6K) [application/octet-stream]
+# Saving to: ‘zabbix-release_6.0-4+ubuntu20.04_all.deb’
+
+# zabbix-release_6.0-4+ubuntu20.04_all.deb            100%[=================================================================================================================>]   3,59K  --.-KB/s    in 0s
+
+# 2025-11-04 17:04:37 (689 MB/s) - ‘zabbix-release_6.0-4+ubuntu20.04_all.deb’ saved [3672/3672]
+
+# Selecting previously unselected package zabbix-release.
+# (Reading database ... 232404 files and directories currently installed.)
+# Preparing to unpack zabbix-release_6.0-4+ubuntu20.04_all.deb ...
+# Unpacking zabbix-release (1:6.0-4+ubuntu20.04) ...
+# Setting up zabbix-release (1:6.0-4+ubuntu20.04) ...
+# Hit:1 http://by.archive.ubuntu.com/ubuntu jammy InRelease
+# Hit:2 http://by.archive.ubuntu.com/ubuntu jammy-updates InRelease
+# Hit:3 http://by.archive.ubuntu.com/ubuntu jammy-backports InRelease
+# Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+# Get:5 https://repo.zabbix.com/zabbix-agent2-plugins/1/ubuntu focal InRelease [4.952 B]
+# Get:6 https://repo.zabbix.com/zabbix/6.0/ubuntu focal InRelease [2.886 B]
+# Get:7 https://repo.zabbix.com/zabbix-agent2-plugins/1/ubuntu focal/main Sources [1.004 B]
+# Get:8 https://repo.zabbix.com/zabbix-agent2-plugins/1/ubuntu focal/main amd64 Packages [625 B]
+# Get:9 https://repo.zabbix.com/zabbix/6.0/ubuntu focal/main Sources [40,9 kB]
+# Get:10 https://repo.zabbix.com/zabbix/6.0/ubuntu focal/main amd64 Packages [119 kB]
+# Get:11 https://repo.zabbix.com/zabbix/6.0/ubuntu focal/main all Packages [24,0 kB]
+# Fetched 193 kB in 2s (84,9 kB/s)
+# Reading package lists... Done
+# Building dependency tree... Done
+# Reading state information... Done
+# 285 packages can be upgraded. Run 'apt list --upgradable' to see them.
+# N: Skipping acquire of configured file 'main/binary-i386/Packages' as repository 'https://repo.zabbix.com/zabbix/6.0/ubuntu focal InRelease' doesn't support architecture 'i386'
+
+
+Установка компонентов Zabbix...
+# Reading package lists... Done
+# Building dependency tree... Done
+# Reading state information... Done
+# Some packages could not be installed. This may mean that you have
+# requested an impossible situation or if you are using the unstable
+# distribution that some required packages have not yet been created
+# or been moved out of Incoming.
+# The following information may help to resolve the situation:
+
+# The following packages have unmet dependencies:
+#  zabbix-agent : Depends: libldap-2.4-2 (>= 2.4.7) but it is not installable
+#                 Depends: libssl1.1 (>= 1.1.1) but it is not installable
+#  zabbix-server-mysql : Depends: libldap-2.4-2 (>= 2.4.7) but it is not installable
+#                        Depends: libsnmp35 (>= 5.8+dfsg) but it is not installable
+#                        Depends: libssl1.1 (>= 1.1.1) but it is not installable
+#                        Recommends: snmpd but it is not going to be installed
+# E: Unable to correct problems, you have held broken packages.
+
+Создание базы данных Zabbix...
+
+
+
+Enter password:
+
+Импорт схемы данных Zabbix...
+gzip: /usr/share/zabbix-sql-scripts/mysql/server.sql.gz: No such file or directory
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Отключение log_bin_trust_function_creators...
+Enter password:
+
+Настройка конфигурации Zabbix Server...
+sed: can't read /etc/zabbix/zabbix_server.conf: No such file or directory
+Перезапуск служб...
+Failed to restart zabbix-server.service: Unit zabbix-server.service not found.
+Failed to restart zabbix-agent.service: Unit zabbix-agent.service not found.
+Synchronizing state of apache2.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable apache2
+Failed to enable unit: Unit file zabbix-server.service does not exist.
+Установка завершена!
+Пароль для пользователя Zabbix в MySQL: Mic20208
+Вы можете получить доступ к веб-интерфейсу Zabbix по адресу: http://ваш_сервер/zabbix
